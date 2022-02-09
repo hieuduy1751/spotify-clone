@@ -1,0 +1,18 @@
+<div class="layout container-fluid vh-100 d-flex flex-column p-0 m-0">
+  <div class="top-layout flex-grow-1 d-flex">
+    <div class="aside" [style.width.%]="asideWidth">
+      <app-aside [menu]="asideMenu" [buttons]="buttons"></app-aside>
+    </div>
+    <div class="content flex-grow-1">
+      <div class="header">
+        <app-header></app-header>
+      </div>
+      <div class="outlet">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <div class="player">
+    <app-player></app-player>
+  </div>
+</div>
