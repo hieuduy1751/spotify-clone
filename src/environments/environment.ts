@@ -5,11 +5,15 @@
 export const environment = {
   
   production: false,
-  token: 'BQDsz-omrIr4eiZWM_-oWUbR6Xhn6lMMpcVA3kMONmo-TdKdwdPyi4HDrdmWFnRgxG-nmAFVixuGb9fVxMQoLL8G3T32bSnQRpcJ-TvQQ3_REDz0G3L3CS6xM8SoEGcc5n_3uV_5JoZN5H5bBT3g5EImaovY9MG2ja-paFIoeUOE',
+  token: 'BQDM3eBzBf8vGtfNu-FktdLcwo_ldAaHgHqnGPG1uxklZ4wKuQen8shlnDH1kSAkBKoh54scweK5JkBoduQ3wVE53_Hq_5xQkwikREBfsfeLXB4P2_i6bNgnFpL5GQbrpNgAPNpKyj04ruorboESGD3XaFv0yTzGZFh-X_KhVf6kwLcJjxtEN5c',
   apiPath: {
     home: 'https://api.spotify.com/v1',
     search: { search: '/search?'},
 
+  },
+  sightengine: {
+    api_user: '1805283954',
+    api_secret: 'enBHTtBFJ2vzHSC2p3MG'
   }
 };
 

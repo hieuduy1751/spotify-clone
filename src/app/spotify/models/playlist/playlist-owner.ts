@@ -1,3 +1,4 @@
+import { ExternalUlrs } from './../externalUrls';
 import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
 
 export class PlaylistOwner {
@@ -5,7 +6,7 @@ export class PlaylistOwner {
   displayName!: string;
 
   @Expose({ name: 'external_urls'})
-  externalUrls!: string; 
+  externalUrls!: ExternalUlrs; 
 
   @Expose({ name: 'href'})
   href!: string;

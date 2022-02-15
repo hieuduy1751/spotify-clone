@@ -11,25 +11,22 @@ import { Playlist } from 'src/app/spotify/models/playlist/playlist';
 export class AsideComponent implements OnInit {
   @Input() menu!: AsideMenu[];
   @Input() buttons!: AsideMenu[];
-
-  playlistsData: Playlist[] = [];
+  myPlaylists: Playlist[] = [];
 
   constructor(private playlistState: PlaylistState) { }
-
 
   ngOnInit(): void {
     this.listenStateEvent();
   }
 
   listenStateEvent(): void {
-    this.playlistState.playlist$.subscribe(playlists => this.playlistsChange());
+    this.playlistState.playlists$.subscribe(playlists => this.playlistsChange());
   }
 
   playlistsChange(): void {
-    const playlists = this.playlistState.getPlaylist();
+    const playlists = this.playlistState.getMyPlaylist();
     if (playlists) {
-      this.playlistsData = playlists;
+      this.myPlaylists = playlists;
     }
   }
-
 }

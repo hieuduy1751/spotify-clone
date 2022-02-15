@@ -1,7 +1,9 @@
+import { PlaylistFollowers } from './playlist-followers';
+import { Image } from './../image';
 import { Expose, deserialize, serialize, classToPlain } from "class-transformer";
-import { PlaylistImage } from "./playlist-image";
 import { PlaylistOwner } from "./playlist-owner";
 import { PlaylistTrack } from "./playlist-track";
+import { ExternalUlrs } from '../externalUrls';
 
 export class Playlist {
   @Expose({ name: 'collaborative' })
@@ -11,7 +13,10 @@ export class Playlist {
   description!: string;
 
   @Expose({ name: 'external_urls' })
-  externalUrls!: object;
+  externalUrls!: ExternalUlrs;
+
+  @Expose({ name: 'followers'})
+  followers!: PlaylistFollowers;
 
   @Expose({ name: 'href' })
   href!: string;
@@ -20,7 +25,7 @@ export class Playlist {
   id!: string;
 
   @Expose({ name: 'images'})
-  images!: PlaylistImage[];
+  images!: Image[];
 
   @Expose({ name: 'name' })
   name!: string;

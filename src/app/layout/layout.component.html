@@ -1,6 +1,6 @@
 <div class="layout container-fluid vh-100 d-flex flex-column p-0 m-0">
   <div class="top-layout flex-grow-1 d-flex">
-    <div class="aside" [style.width.%]="asideWidth">
+    <div class="aside" [style.width.%]="asideWidth" [style.zIndex]="10">
       <app-aside [menu]="asideMenu" [buttons]="buttons"></app-aside>
     </div>
     <div class="content flex-grow-1">

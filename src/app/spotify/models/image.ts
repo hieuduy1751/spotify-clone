@@ -1,6 +1,6 @@
 import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
 
-export class PlaylistImage {
+export class Image {
   @Expose({name: 'height'})
   height?: string;
 
@@ -10,8 +10,8 @@ export class PlaylistImage {
   @Expose({name: 'width'})
   width?: string;
 
-  static fromJson(json: any): PlaylistImage {
-    return deserialize(PlaylistImage, json);
+  static fromJson(json: any): Image {
+    return deserialize(Image, json);
   }
 
   serialize(): string {

@@ -7,6 +7,9 @@ import { LayoutComponent } from './layout.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PlayerComponent } from './components/player/player.component';
+import { PlayerSongComponent } from './components/player/components/player-song/player-song.component';
+import { PlayerControlComponent } from './components/player/components/player-control/player-control.component';
+import { PlayerFunctionComponent } from './components/player/components/player-function/player-function.component';
 
 
 @NgModule({
@@ -14,7 +17,10 @@ import { PlayerComponent } from './components/player/player.component';
     LayoutComponent,
     AsideComponent,
     HeaderComponent,
-    PlayerComponent
+    PlayerComponent,
+    PlayerSongComponent,
+    PlayerControlComponent,
+    PlayerFunctionComponent
   ],
   imports: [
     CommonModule,

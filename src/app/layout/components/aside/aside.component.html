@@ -34,7 +34,7 @@
         {{ name }}
       </a>
     </ng-template> 
-    <div *ngFor="let playlist of playlistsData" class="px-4 py-1">
+    <div *ngFor="let playlist of myPlaylists" class="px-4 py-1">
       <ng-container [ngTemplateOutlet]="playlistTemp" [ngTemplateOutletContext]="playlist"></ng-container>
     </div> 
   </div>

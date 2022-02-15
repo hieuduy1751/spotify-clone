@@ -7,7 +7,10 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      
+      {
+        path: 'playlist',
+        loadChildren: () => import('../modules/playlist/playlist.module').then(m => m.PlaylistModule)
+      }
     ]
   }  
 ];
