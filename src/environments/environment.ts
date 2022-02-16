@@ -5,7 +5,7 @@
 export const environment = {
   
   production: false,
-  token: 'BQD3gyYRUqy1WZGEyg5-FeNFcny4lctSmiRxvpWvurU4b0USKP3SEJWJ_nKCgqY_4f92DMV8gWTR2RxIsU0VyiH5-JNVb-z8kl3vm8-EP5A_pDCi9UJKum2b4UEncONmD_DgKQ1tDIBYN9cy9br7sMcj6bYnxRgM-mI5BSvb72SUVE_5f3ytI5Y',
+  token: 'BQCwkw0XyiBDf2CttnlJ_gUKcbh32juQ-7fzUIYkrDlQ7wlBRcYjsl22g4rJEPYwtIBdD1fjIl5CJBdkB2DfCNVa6pkrwQwiOpdcSRbLbvlSF5b2sOR49ejn7txC0RSf3J0XbtBQC15Tz-2mJGp4IK0xHpSTmnyjh2NzsJ5h2ZdZbnq0ARbwdeI',
   apiPath: {
     home: 'https://api.spotify.com/v1',
     search: { search: '/search?'},

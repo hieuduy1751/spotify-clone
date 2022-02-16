@@ -1,16 +1,22 @@
-import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
+import { ExternalUlrs } from './../externalUrls';
+import { classToPlain, deserialize, Exclude, Expose, serialize, Type } from "class-transformer";
 import { TrackArtist } from "./track-artist";
 import { Image } from "../image";
+import { UiModel } from '../_ui_helper/ui-model';
 
-export class TrackAlbum {
+export class TrackAlbum extends UiModel {
   @Expose({ name: "album_type" })
   albumType!: string;
 
   @Expose({ name: "artists" })
+  @Exclude({ toPlainOnly: true })
+  @Type(() => TrackArtist)
   artists!: TrackArtist[];
 
   @Expose({ name: "external_urls" })
-  externalUrls!: object;
+  @Exclude({ toPlainOnly: true })
+  @Type(() => ExternalUlrs)
+  externalUrls!: ExternalUlrs;
 
   @Expose({ name: "href" })
   href!: string;
@@ -19,6 +25,8 @@ export class TrackAlbum {
   id!: string;
 
   @Expose({ name: "images" })
+  @Exclude({ toPlainOnly: true })
+  @Type(() => Image)
   images!: Image[];
 
   @Expose({ name: "name" })

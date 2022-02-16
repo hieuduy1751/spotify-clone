@@ -1,6 +1,7 @@
+import { UiModel } from './_ui_helper/ui-model';
 import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
 
-export class ExternalIds {
+export class ExternalIds extends UiModel {
   @Expose({name: 'isrc'})
   isrc!: string;
 

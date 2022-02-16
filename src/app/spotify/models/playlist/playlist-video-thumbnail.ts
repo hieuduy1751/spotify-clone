@@ -1,6 +1,7 @@
+import { UiModel } from './../_ui_helper/ui-model';
 import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
 
-export class PlaylistVideoThumbnail {
+export class PlaylistVideoThumbnail extends UiModel{
   @Expose({name: 'url'})
   url!: string;
 
