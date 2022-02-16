@@ -1,0 +1,6 @@
+@use '../../assets/scss/colorVariables';
+
+div.player {
+  background-color: color.$secondary-color;
+  height: 90px !important;
+}
