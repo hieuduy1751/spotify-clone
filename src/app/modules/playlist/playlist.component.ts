@@ -40,7 +40,6 @@ export class PlaylistComponent implements OnInit {
       if (playlist.images) {
         this.playlistState.loadColor(playlist.images[0].url);
         this.bannerBackgroundColor = this.playlistState.getColorDetected();
-        console.log(this.bannerBackgroundColor);
       }
     }
   }

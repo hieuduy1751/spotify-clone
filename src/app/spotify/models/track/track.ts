@@ -1,4 +1,6 @@
 import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
+import { ExternalIds } from "../externalIds";
+import { ExternalUlrs } from "../externalUrls";
 import { TrackAlbum } from "./track-album";
 import { TrackArtist } from "./track-artist";
 
@@ -8,6 +10,9 @@ export class Track {
 
   @Expose({ name: "artists" })
   artists!: TrackArtist[];
+
+  @Expose({ name: 'available_markets'})
+  availableMarkets!: string[];
 
   @Expose({ name: "disc_number" })
   discNumber!: number;
@@ -19,10 +24,10 @@ export class Track {
   explicit!: boolean;
 
   @Expose({ name: "external_ids" })
-  externalIds!: object;
+  externalIds!: ExternalIds;
 
   @Expose({ name: "external_urls" })
-  externalUrls!: object;
+  externalUrls!: ExternalUlrs;
 
   @Expose({ name: "href" })
   href!: string;
