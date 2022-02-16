@@ -1,8 +1,11 @@
-import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
+import { UiModel } from './../_ui_helper/ui-model';
+import { classToPlain, deserialize, Exclude, Expose, serialize, Type } from "class-transformer";
 import { ExternalUlrs } from "../externalUrls";
 
-export class PlaylistAddedBy {
+export class PlaylistAddedBy extends UiModel {
   @Expose({name: 'external_urls'})
+  @Exclude({ toPlainOnly: true })
+  @Type(() => ExternalUlrs)
   externalUrls!: ExternalUlrs;
 
   @Expose({ name: 'href'})

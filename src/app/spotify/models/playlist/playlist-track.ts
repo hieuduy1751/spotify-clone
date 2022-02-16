@@ -1,11 +1,14 @@
-import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
+import { UiModel } from './../_ui_helper/ui-model';
+import { classToPlain, deserialize, Exclude, Expose, serialize, Type } from "class-transformer";
 import { PlaylistItems } from "./playlist-items";
 
-export class PlaylistTrack {
+export class PlaylistTrack extends UiModel{
   @Expose({ name: 'href' })
   href!: string;
 
   @Expose({name: 'items'})
+  @Exclude({ toPlainOnly: true })
+  @Type(() => PlaylistItems)
   items! : PlaylistItems[];
 
   @Expose({ name: 'limit' })

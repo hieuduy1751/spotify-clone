@@ -1,6 +1,7 @@
+import { UiModel } from './../_ui_helper/ui-model';
 import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
 
-export class PlaylistFollowers {
+export class PlaylistFollowers extends UiModel{
   @Expose({ name: "href" })
   href!: string;
 
