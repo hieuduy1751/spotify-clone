@@ -96,4 +96,13 @@ export class PlaylistState implements OnDestroy {
       ).subscribe();
     this.subscription.add(sb);
   }
+
+  createNewPlaylist(userId: string, index?: number) {
+    this.setIsReady(false);
+    return this.playlistService.createNewPlaylist(userId, index)
+      .pipe(
+        finalize(() => this.setIsReady(true))
+      )
+      ;
+  }
 }

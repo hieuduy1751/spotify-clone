@@ -40,4 +40,13 @@ export class PlaylistService {
         ));
   }
 
+  createNewPlaylist(userId: string, index?: number): Observable<Playlist> {
+    return this.http.post(`${API_PATH.BASE_URL}/users/${userId}/playlists`, {
+      name: "New Playlist" + (index ? index : ''),
+      description: "New playlist description",
+      public: false
+    }).pipe(
+      map((res: HttpResponse<any>) => Playlist.fromJson(JSON.stringify(res.body)))
+    );
+  }
 }

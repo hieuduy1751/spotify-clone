@@ -19,8 +19,6 @@ export class TrackService {
     .pipe(
       map((response: HttpResponse<any>) => {
         const body = response.body;
-          body.album = TrackAlbum.fromJson(JSON.stringify(body.album));
-          body.artists = TrackArtist.fromJson(JSON.stringify(body.artists));
           return Track.fromJson(JSON.stringify(body));
       }));
   }
