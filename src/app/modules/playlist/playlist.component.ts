@@ -37,9 +37,11 @@ export class PlaylistComponent implements OnInit {
 
     if (playlist) {
       this.playlist = playlist;
-      if (playlist.images) {
+      if (playlist.images != undefined && playlist.images[0] != undefined) {
         this.playlistState.loadColor(playlist.images[0].url);
-        this.bannerBackgroundColor = this.playlistState.getColorDetected();
+        this.colorChange();
+      } else {
+        this.bannerBackgroundColor = {};
       }
     }
   }
