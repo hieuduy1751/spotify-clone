@@ -1,4 +1,4 @@
-<div class="container-fluid h-100 p-0 m-0 aside">
+<div class="container-fluid h-100 p-0 m-0 aside d-flex flex-column">
   <!-- Logo -->
   <a routerLink="/">
     <img src="../../../../assets/logos/01_RGB/02_PNG/Spotify_Logo_RGB_White.png" alt="Spotify Logo"
@@ -6,7 +6,7 @@
   </a>
   <!-- menu items template -->
   <ng-template #mainMenu let-label="title" let-icon="icon" let-router="router">
-    <a [routerLink]="router" class="d-block selector font-weight-bold">
+    <a [routerLink]="router == '/playlist/create' ? null : router" class="d-block selector font-weight-bold" (click)="router == '/playlist/create' ? createNewPlaylist() : null">
       <ng-container *ngIf="icon">
         <i [class]="'mr-3 fa-lg fas fa-' + icon"></i>
       </ng-container> 
@@ -28,14 +28,13 @@
 
   <hr class="bg-dark mx-4 my-2">
   <!-- playlists -->
-  <div class="aside-playlists">
-    <ng-template #playlistTemp let-name="name" let-router="id">
-      <a [routerLink]="'/playlist/'+ router" class="d-block selector">
-        {{ name }}
+  <div class="flex-grow-1 container-fluid m-0 p-0 d-flex flex-column h-25">
+    <app-aside-playlist class="flex-grow-1 overflow-auto" [myPlaylists]="myPlaylists"></app-aside-playlist>
+    <div class="w-100 pl-4 download-section selector">
+      <a routerLink="/download" class="text-reset">
+        <i class="fas fa-arrow-down mr-4 my-3"></i>
+        Install App
       </a>
-    </ng-template> 
-    <div *ngFor="let playlist of myPlaylists" class="px-4 py-1">
-      <ng-container [ngTemplateOutlet]="playlistTemp" [ngTemplateOutletContext]="playlist"></ng-container>
-    </div> 
-  </div>
+    </div>
+  </div> 
 </div>

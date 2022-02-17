@@ -1,0 +1,13 @@
+<div class="playlist-function container-fluid p-4 m-0 d-flex align-items-center">
+  <ng-template #playBtn>
+    <button class="playlist-function-play pl-2 pt-1">
+      <i class="fas fa-lg fa-play"></i>
+    </button>
+  </ng-template>
+
+  <ng-container *ngTemplateOutlet="playBtn"></ng-container>
+
+  <i class="playlist-function-favorite mx-4 far fa-heart fa-2x"></i>
+
+  <i class="playlist-function-menu fas fa-ellipsis-h fa-2x"></i>
+</div>

@@ -1,5 +1,5 @@
+import { Followers } from './../followers';
 import { UiModel } from './../_ui_helper/ui-model';
-import { PlaylistFollowers } from './playlist-followers';
 import { Image } from './../image';
 import { Expose, deserialize, serialize, classToPlain, Type, Exclude } from "class-transformer";
 import { PlaylistOwner } from "./playlist-owner";
@@ -20,8 +20,8 @@ export class Playlist extends UiModel {
 
   @Expose({ name: 'followers'})
   @Exclude({ toPlainOnly: true })
-  @Type(() => PlaylistFollowers)
-  followers!: PlaylistFollowers;
+  @Type(() => Followers)
+  followers!: Followers;
 
   @Expose({ name: 'href' })
   href!: string;

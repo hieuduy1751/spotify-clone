@@ -1,0 +1,10 @@
+<div class="aside-playlists">
+  <ng-template #playlistTemp let-name="name" let-router="id">
+    <a [routerLink]="'/playlist/'+ router" class="d-block selector">
+      {{ name }}
+    </a>
+  </ng-template> 
+  <div *ngFor="let playlist of myPlaylists" class="px-4 py-2">
+    <ng-container [ngTemplateOutlet]="playlistTemp" [ngTemplateOutletContext]="playlist"></ng-container>
+  </div> 
+</div>
