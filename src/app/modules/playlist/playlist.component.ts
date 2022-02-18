@@ -48,7 +48,6 @@ export class PlaylistComponent implements OnInit {
 
   colorChange(): void {
     const color = this.playlistState.getColorDetected();
-    console.log(color);
 
     if (color) {
       this.bannerBackgroundColor = color;

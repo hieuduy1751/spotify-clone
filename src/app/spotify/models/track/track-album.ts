@@ -13,6 +13,9 @@ export class TrackAlbum extends UiModel {
   @Type(() => TrackArtist)
   artists!: TrackArtist[];
 
+  @Expose({name: 'available_markets'})
+  availableMarkets!: string[];
+
   @Expose({ name: "external_urls" })
   @Exclude({ toPlainOnly: true })
   @Type(() => ExternalUlrs)

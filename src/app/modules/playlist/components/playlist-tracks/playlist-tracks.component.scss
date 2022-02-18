@@ -1,7 +1,76 @@
-@use '../../../../../assets/scss/colorVariables' as color;
+@use "../../../../../assets/scss/colorVariables" as color;
 
 .playlist-tracks {
   z-index: 2;
   background-color: color.$playlist-tracks-background;
-  height: 1500px !important;
+  table {
+    thead {
+      th {
+        padding-bottom: 0.5rem;
+        font-size: 0.75rem;
+        color: color.$gray-color;
+        font-weight: 400;
+
+        &:first-child {
+          padding-left: 1.5rem;
+        }
+
+        &:last-child {
+          padding-right: 1.5rem;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: #2a2a2a;
+          border-radius: 20px;
+
+          a {
+            color: color.$white-color !important;
+          }
+        }
+
+        th {
+          padding-left: 1.5rem;
+          font-size: 1rem;
+          color: color.$gray-color;
+          font-weight: 400;
+          vertical-align: middle;
+        }
+
+        td {
+          vertical-align: middle;
+          font-size: 0.875rem;
+          font-weight: 300;
+          color: color.$gray-color;
+
+          a {
+            color: color.$gray-color;
+          }
+
+          div.track-section {
+            div.track-section-info {
+              p.track-name {
+                font-size: 1rem;
+                color: white;
+                font-weight: 300;
+              }
+
+              p.comma {
+                font-size: 0.75rem;
+                font-weight: 300;
+                color: color.$gray-color;
+              }
+            }
+          }
+
+          &:last-child {
+            padding-right: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 }

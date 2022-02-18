@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { PlaylistItems } from './../../../../spotify/models/playlist/playlist-items';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-playlist-tracks',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playlist-tracks.component.scss']
 })
 export class PlaylistTracksComponent implements OnInit {
+  @Input() items: PlaylistItems[] = [];
+  currentHoverItem: number = -1;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onHover(index: number) {
+    this.currentHoverItem = index;
+  }
 }

@@ -1,4 +1,4 @@
-@use '../../../../assets/scss/colorVariables' as color;
+@use "../../../../assets/scss/colorVariables" as color;
 
 div.aside {
   font-size: 0.9rem;
@@ -7,22 +7,6 @@ div.aside {
     height: 90px !important;
   }
 }
-
-app-aside-playlist {
-  &::-webkit-scrollbar {
-    width: 10px;
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: color.$scroll-thumb-color;
-    border-radius: 5px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: gray;
-  } 
-} 
 
 .download-section {
   a:hover {
