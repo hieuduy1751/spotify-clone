@@ -5,7 +5,7 @@
 export const environment = {
 
   production: false,
-  token: 'BQCzt9F5_qecg1MCQ0R3VxgDsky85slKe5v8RoGB2LplKFFTT1WMMU1kIG_6S1oOWje1081at0fMmIXuCkGTzflXXd7mcCSJF72PvT5Y4JME7O3_pBzD9rJD79_t-v7vTzJXmV9UIw7VxyLAq7d-h8CJLSCILWyCvwMXkuhLZryBK0If_R6CI6IAdpWHDRw5BPp9jpbf_-hbfn8ItdR_hrQffXN1w12mkudK6bN6d02_rArk9hPo',
+  token: 'BQDkCvCAd3g5XPab-wM2I6FH-VA8oaHDvXVAUYNXmTlmhl4OT99G3pba-SKqbRlmvpezgtLb-q17S2EOuyZwLBKQh_lA3h2HZXv4t9W7bH75ZifdW6eWPkWvAPMSkPzOzOs8JcP6qoS0NTUd38Xz9QxxRThxGg9FXUtiMYo1UVbPJEYk20448sYnm2OvjRTumDnvBrFxxqerN61bCKIKeneoZpOTi6WIeawSXneGi-xPJirmBio_',
   apiPath: {
     home: 'https://api.spotify.com/v1',
     search: { search: '/search?' },
@@ -13,7 +13,7 @@ export const environment = {
   },
   sightengine: {
     api_user: '1805283954',
-    api_secret: 'enBHTt BFJ2vzHSC2p3MG'
+    api_secret: 'enBHTtBFJ2vzHSC2p3MG'
   }
 };
 
