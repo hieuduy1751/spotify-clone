@@ -5,26 +5,28 @@ import { PlaylistAddedBy } from "./playlist-added-by";
 import { PlaylistVideoThumbnail } from "./playlist-video-thumbnail";
 
 export class PlaylistItems extends UiModel {
-  @Expose({ name: 'added_at'})
+  [x: string]: any;
+  @Expose({ name: 'added_at' })
   addedAt!: Date;
 
-  @Expose({name: 'added_by'})
+  @Expose({ name: 'added_by' })
   @Type(() => PlaylistAddedBy)
   @Exclude({ toPlainOnly: true })
   addedBy!: PlaylistAddedBy;
 
-  @Expose({ name: 'is_local'})
+  @Expose({ name: 'is_local' })
   isLocal!: boolean;
 
-  @Expose({ name: 'primary_color'})
+  @Expose({ name: 'primary_color' })
   primaryColor!: string;
 
-  @Expose({ name: 'tracks'})
+
+  @Expose({ name: 'track' })
   @Exclude({ toPlainOnly: true })
   @Type(() => Track)
-  tracks!: Track[];
+  track!: Track;
 
-  @Expose({name: 'video_thumbnail'})
+  @Expose({ name: 'video_thumbnail' })
   @Exclude({ toPlainOnly: true })
   @Type(() => PlaylistVideoThumbnail)
   videoThumbnail!: PlaylistVideoThumbnail;
