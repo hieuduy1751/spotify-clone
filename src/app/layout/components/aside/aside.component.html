@@ -1,4 +1,6 @@
+
 <div class="w-100 h-100 aside d-flex flex-column">
+
   <!-- Logo -->
   <a routerLink="/">
     <img src="../../../../assets/logos/01_RGB/02_PNG/Spotify_Logo_RGB_White.png" alt="Spotify Logo"
@@ -6,8 +8,10 @@
   </a>
   <!-- menu items template -->
   <ng-template #mainMenu let-label="title" let-icon="icon" let-router="router">
+
     <a [routerLink]="router == '/playlist/create' ? null : router" class="d-block selector font-weight-bold"
       (click)="router == '/playlist/create' ? createNewPlaylist() : null">
+
       <ng-container *ngIf="icon">
         <i [class]="'mr-3 fa-lg fas fa-' + icon"></i>
       </ng-container>
@@ -29,6 +33,7 @@
 
   <hr class="bg-dark mx-4 my-2">
   <!-- playlists -->
+
   <div class="flex-grow-1 w-100 d-flex flex-column h-25">
     <app-aside-playlist class="flex-grow-1 overflow-auto" [myPlaylists]="myPlaylists"></app-aside-playlist>
     <div class="w-100 pl-4 download-section selector">

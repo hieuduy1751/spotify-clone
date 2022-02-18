@@ -20,6 +20,7 @@ export class PlaylistItems extends UiModel {
   @Expose({ name: 'primary_color' })
   primaryColor!: string;
 
+
   @Expose({ name: 'track' })
   @Exclude({ toPlainOnly: true })
   @Type(() => Track)
