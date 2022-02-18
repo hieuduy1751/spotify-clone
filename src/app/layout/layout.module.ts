@@ -23,11 +23,7 @@ import { AsidePlaylistComponent } from './components/aside/components/aside-play
     PlayerSongComponent,
     PlayerControlComponent,
     PlayerFunctionComponent,
-<<<<<<< HEAD
-    AsidePlaylistComponent,
-=======
     AsidePlaylistComponent
->>>>>>> d3c5f6b4a63a8d99d93e8a05475fc6923b4ba7e5
   ],
   imports: [
     CommonModule,
