@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container-fluid p-0 m-0 h-100">
   <app-playlist-banner [playlist]="playlist" [bannerColor]="this.bannerBackgroundColor" [style.zIndex]="10">
   </app-playlist-banner>
@@ -5,4 +6,10 @@
   <ng-container *ngIf="playlist.tracks">
     <app-playlist-tracks [items]="playlist.tracks.items"></app-playlist-tracks>
   </ng-container>
+=======
+<div class="container-fluid p-0 m-0 overflow-auto">
+  <app-playlist-banner [playlist]="playlist" [bannerColor]="this.bannerBackgroundColor" [style.zIndex]="10"></app-playlist-banner>
+  <app-playlist-function></app-playlist-function>
+  <app-playlist-tracks></app-playlist-tracks>
+>>>>>>> d3c5f6b4a63a8d99d93e8a05475fc6923b4ba7e5
 </div>
