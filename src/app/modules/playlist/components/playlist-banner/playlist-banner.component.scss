@@ -1,6 +1,9 @@
+@use '../../../../../assets/scss/colorVariables' as color;
+
 .banner {
   height: 270px;
   .banner-img {
+    background-color: #282828;
     box-shadow: 0 0 2rem rgb(22, 22, 22);
   }
   .banner-details {
@@ -26,7 +29,7 @@
 
     .banner-details-description {
       font-size: 0.9rem;
-      color: #ccb0c6;
+      color: color.$gray-color;
       padding-bottom: 0.25rem;
     }
 

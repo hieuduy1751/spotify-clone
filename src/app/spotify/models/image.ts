@@ -1,6 +1,7 @@
+import { UiModel } from './_ui_helper/ui-model';
 import { classToPlain, deserialize, Expose, serialize } from "class-transformer";
 
-export class Image {
+export class Image extends UiModel{
   @Expose({name: 'height'})
   height?: string;
 

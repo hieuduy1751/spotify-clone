@@ -1,4 +1,8 @@
-<div class="container-fluid p-0 m-0">
-  <app-playlist-banner [playlist]="playlist" [bannerColor]="this.bannerBackgroundColor" [style.zIndex]="10"></app-playlist-banner>
-  <app-playlist-tracks></app-playlist-tracks>
+<div class="container-fluid p-0 m-0 h-100">
+  <app-playlist-banner [playlist]="playlist" [bannerColor]="this.bannerBackgroundColor" [style.zIndex]="10">
+  </app-playlist-banner>
+  <app-playlist-function></app-playlist-function>
+  <ng-container *ngIf="playlist.tracks">
+    <app-playlist-tracks [items]="playlist.tracks.items"></app-playlist-tracks>
+  </ng-container>
 </div>

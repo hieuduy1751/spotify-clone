@@ -1,9 +1,13 @@
-import { Expose, deserialize, serialize, classToPlain } from "class-transformer";
+import { UiModel } from './../_ui_helper/ui-model';
+import { ExternalUlrs } from './../externalUrls';
+import { Expose, deserialize, serialize, classToPlain, Type, Exclude } from "class-transformer";
 
 
-export class TrackArtist {
+export class TrackArtist extends UiModel {
   @Expose({ name: "external_urls" })
-  externalUrls!: object;
+  @Exclude({ toPlainOnly: true })
+  @Type(() => ExternalUlrs)
+  externalUrls!: ExternalUlrs;
 
   @Expose({ name: "href" })
   href!: string;

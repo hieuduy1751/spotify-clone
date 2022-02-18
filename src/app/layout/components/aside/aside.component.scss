@@ -1,7 +1,15 @@
+@use "../../../../assets/scss/colorVariables" as color;
+
 div.aside {
   font-size: 0.9rem;
   background-color: black;
   a > .aside-logo {
     height: 90px !important;
+  }
+}
+
+.download-section {
+  a:hover {
+    text-decoration: none;
   }
 }

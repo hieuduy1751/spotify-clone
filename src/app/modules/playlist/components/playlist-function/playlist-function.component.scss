@@ -1,0 +1,35 @@
+@use "../../../../../assets/scss/colorVariables" as color;
+
+%hoverChangeColor {
+  color: color.$gray-color;
+    &:hover {
+      color: white;
+    }
+}
+
+.playlist-function {
+  background-color: color.$playlist-tracks-background;
+  .playlist-function-play {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: color.$spotify-green-color;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    i {
+      color: black;
+    }
+  }
+
+  .playlist-function-favorite {
+    @extend %hoverChangeColor; 
+  }
+
+  .playlist-function-menu {
+    @extend %hoverChangeColor;
+  }
+}

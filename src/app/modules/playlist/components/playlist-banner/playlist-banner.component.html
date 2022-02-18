@@ -1,16 +1,25 @@
-<div class="banner container-fluid p-4 m-0 d-flex" [style.backgroundColor]="this.bannerColor.colors && this.bannerColor.colors.accent ? this.bannerColor.colors.accent[0].hex : '#352f2f'" [style.boxShadow]="'0 2rem 5rem 1rem' + (this.bannerColor.colors && this.bannerColor.colors.accent ? this.bannerColor.colors.accent[0].hex : '#352f2f')">
-  <ng-container *ngIf="this.playlist.images" [style.backgroundColor]="'#000'">
-    <img [src]="playlist.images[0].url" class="h-100 mr-4 banner-img">
+<div class="banner container-fluid p-4 m-0 d-flex"
+  [style.backgroundColor]="this.bannerColor.colors && this.bannerColor.colors.accent ? this.bannerColor.colors.accent[0].hex : '#352f2f'"
+  [style.boxShadow]="'0 2rem 5rem 1rem' + (this.bannerColor.colors && this.bannerColor.colors.accent ? this.bannerColor.colors.accent[0].hex : '#352f2f')">
+  <ng-container *ngIf="this.playlist.owner">
+    <ng-container *ngIf="playlist.images.length;else noIMG">
+      <img [src]="playlist.images[0].url" class="h-100 mr-4 banner-img">
+    </ng-container>
+    <ng-template #noIMG>
+      <div class="d-flex justify-content-center align-items-center h-100 mr-4 banner-img" [style.aspectRatio]="1">
+        <i class="fas fa-music fa-4x text-secondary"></i>
+      </div>
+    </ng-template>
+    <div class="flex-grow-1 d-flex flex-column justify-content-end h-100 banner-details">
+      <p>PLAYLIST</p>
+      <p class="banner-details-name">{{ this.playlist.name }}</p>
+      <p class="banner-details-description" [innerHtml]="this.playlist.description"></p>
+      <ul class="d-flex p-0 m-0">
+        <a [href]="this.playlist.owner.externalUrls.spotify" class="text-white d-inline-block mr-3">{{
+          this.playlist.owner.displayName }}</a>
+        <li class="mx-2" *ngIf="this.playlist.followers.total != 0">{{ this.playlist.followers.total }} likes</li>
+        <li class="ml-3" *ngIf="this.playlist.tracks.total != 0">{{ this.playlist.tracks.total }} songs</li>
+      </ul>
+    </div>
   </ng-container>
-  <div class="flex-grow-1 d-flex flex-column justify-content-end h-100 banner-details">
-    <p>PLAYLIST</p>
-    <p class="banner-details-name">{{ this.playlist.name }}</p>
-    <p class="banner-details-description" [innerHtml]="this.playlist.description"></p>
-    <ul class="d-flex p-0 m-0">
-      <a [href]="this.playlist.owner.externalUrls.spotify" class="text-white d-inline-block mr-3">{{ this.playlist.owner.displayName }}</a>
-      <li class="mx-2" *ngIf="this.playlist.followers.total != 0">{{ this.playlist.followers.total }} likes</li>
-      <li class="ml-3" *ngIf="this.playlist.tracks.total != 0">{{ this.playlist.tracks.total }} songs</li>
-    </ul>
-    
-  </div>
 </div>

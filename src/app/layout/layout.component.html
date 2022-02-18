@@ -1,18 +1,18 @@
-<div class="layout container-fluid vh-100 d-flex flex-column p-0 m-0">
-  <div class="top-layout flex-grow-1 d-flex">
-    <div class="aside" [style.width.%]="asideWidth" [style.zIndex]="10">
-      <app-aside [menu]="asideMenu" [buttons]="buttons"></app-aside>
+<div class="layout w-100 vh-100">
+  <div class="top-layout d-flex">
+    <div class="aside sticky-top" [style.width.%]="asideWidth" [style.zIndex]="10">
+      <app-aside class="h-100" [menu]="asideMenu" [buttons]="buttons"></app-aside>
     </div>
-    <div class="content flex-grow-1">
-      <div class="header">
+    <div class="content flex-grow-1 h-100 d-flex flex-column overflow-auto">
+      <div class="header sticky-top">
         <app-header></app-header>
       </div>
-      <div class="outlet">
+      <div class="outlet flex-grow-1">
         <router-outlet></router-outlet>
       </div>
     </div>
   </div>
-  <div class="player">
+  <div class="player fixed-bottom">
     <app-player></app-player>
   </div>
 </div>

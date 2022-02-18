@@ -3,12 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  
+
   production: false,
-  token: 'BQDM3eBzBf8vGtfNu-FktdLcwo_ldAaHgHqnGPG1uxklZ4wKuQen8shlnDH1kSAkBKoh54scweK5JkBoduQ3wVE53_Hq_5xQkwikREBfsfeLXB4P2_i6bNgnFpL5GQbrpNgAPNpKyj04ruorboESGD3XaFv0yTzGZFh-X_KhVf6kwLcJjxtEN5c',
+  token: 'BQDkCvCAd3g5XPab-wM2I6FH-VA8oaHDvXVAUYNXmTlmhl4OT99G3pba-SKqbRlmvpezgtLb-q17S2EOuyZwLBKQh_lA3h2HZXv4t9W7bH75ZifdW6eWPkWvAPMSkPzOzOs8JcP6qoS0NTUd38Xz9QxxRThxGg9FXUtiMYo1UVbPJEYk20448sYnm2OvjRTumDnvBrFxxqerN61bCKIKeneoZpOTi6WIeawSXneGi-xPJirmBio_',
   apiPath: {
     home: 'https://api.spotify.com/v1',
-    search: { search: '/search?'},
+    search: { search: '/search?' },
 
   },
   sightengine: {

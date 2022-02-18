@@ -1,3 +1,48 @@
-<div class="playlist-tracks container-fluid p-0 m-0">
-  
+<div class="playlist-tracks container-fluid p-4 m-0">
+  <table class="table" *ngIf="items.length" vertical-align="middle">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">TITLE</th>
+        <th scope="col">ALBUM</th>
+        <th scope="col">DATE ADDED</th>
+        <th scope="col" class="text-right">
+          <i class="far fa-clock"></i>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let idx = index; let f = first" (mouseover)="onHover(idx)"
+        (mouseout)="onHover(-1)">
+        <th scope="row" style="width: 10px;">
+          <ng-container *ngIf="idx != this.currentHoverItem;else onHoverItem">
+            {{ idx + 1 }}
+          </ng-container>
+          <ng-template #onHoverItem>
+            <i class="fas fa-play"></i>
+          </ng-template>
+        </th>
+        <td style="width: 35%;">
+          <ng-container *ngIf="item.track.album">
+            <div class="d-flex align-items-end track-section">
+              <img [src]="item.track.album.images[2].url" height="40px" width="40px" class="mr-3">
+              <div class="track-section-info">
+                <p class="h4 track-name m-0">{{ item.track.name }}</p>
+                <ng-container *ngFor="let artist of item.track.artists; let l = last">
+                  <a [routerLink]="'/artist/' + artist.id">{{ artist.name }}</a>
+                  <p class="comma d-inline" *ngIf="!l">, </p>
+                </ng-container>
+              </div>
+            </div>
+          </ng-container>
+
+        </td>
+        <td style="width: 30%;">
+          <a [routerLink]="'/album/' + item.track.album.id">{{ item.track.album.name }}</a>
+        </td>
+        <td style="width: 30%;">{{ item.addedAt | fromNow }}</td>
+        <td class="text-right" style="width: 20%">{{ item.track.durationMs | msToMinutes }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

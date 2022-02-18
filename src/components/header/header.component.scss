@@ -1,0 +1,6 @@
+@use '../../../../assets/scss/colorVariables' as color;
+
+div.header {
+  background-color: color.$header-color;
+  height: 60px !important;
+}

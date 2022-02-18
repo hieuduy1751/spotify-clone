@@ -1,11 +1,12 @@
-import { PlaylistFollowers } from './playlist-followers';
+import { Followers } from './../followers';
+import { UiModel } from './../_ui_helper/ui-model';
 import { Image } from './../image';
-import { Expose, deserialize, serialize, classToPlain } from "class-transformer";
+import { Expose, deserialize, serialize, classToPlain, Type, Exclude } from "class-transformer";
 import { PlaylistOwner } from "./playlist-owner";
 import { PlaylistTrack } from "./playlist-track";
 import { ExternalUlrs } from '../externalUrls';
 
-export class Playlist {
+export class Playlist extends UiModel {
   @Expose({ name: 'collaborative' })
   collaborative!: boolean;
 
@@ -13,10 +14,14 @@ export class Playlist {
   description!: string;
 
   @Expose({ name: 'external_urls' })
+  @Exclude({ toPlainOnly: true })
+  @Type(() => ExternalUlrs)
   externalUrls!: ExternalUlrs;
 
   @Expose({ name: 'followers'})
-  followers!: PlaylistFollowers;
+  @Exclude({ toPlainOnly: true })
+  @Type(() => Followers)
+  followers!: Followers;
 
   @Expose({ name: 'href' })
   href!: string;
@@ -31,6 +36,8 @@ export class Playlist {
   name!: string;
 
   @Expose({ name: 'owner'})
+  @Exclude({ toPlainOnly: true })
+  @Type(() => PlaylistOwner)
   owner!: PlaylistOwner;
 
   @Expose({ name: 'primary_color' })
@@ -43,6 +50,8 @@ export class Playlist {
   snapshotId!: string;
 
   @Expose({ name: 'tracks' })
+  @Exclude({ toPlainOnly: true })
+  @Type(() => PlaylistTrack)
   tracks!: PlaylistTrack;
 
   @Expose({ name: 'type' })
