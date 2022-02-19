@@ -89,3 +89,18 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.button-active {
+  color: white;
+  background-color: color.$btn-bg-active !important;
+}
+
+.button-disable {
+  color: color.$btn-text-disable;
+  background-color: color.$btn-bg-disable !important;
+  cursor: not-allowed !important;
+}
+
+.pointer {
+  cursor: pointer;
+}

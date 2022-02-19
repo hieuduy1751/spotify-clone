@@ -3,11 +3,11 @@
     <div class="aside sticky-top" [style.width.%]="asideWidth" [style.zIndex]="10">
       <app-aside class="h-100" [menu]="asideMenu" [buttons]="buttons"></app-aside>
     </div>
-    <div class="content flex-grow-1 h-100 d-flex flex-column overflow-auto">
+    <div (scroll)="onScroll($event)" class="content flex-grow-1 h-100 d-flex flex-column overflow-auto">
       <div class="header sticky-top">
         <app-header></app-header>
       </div>
-      <div class="outlet flex-grow-1">
+      <div class="outlet flex-grow-1 w-100">
         <router-outlet></router-outlet>
       </div>
     </div>
