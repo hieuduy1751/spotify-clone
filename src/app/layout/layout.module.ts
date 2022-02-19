@@ -1,3 +1,4 @@
+import { NavigatorState } from './../spotify/states/navigator/navigator.state';
 import { UserState } from './../spotify/states/user/user.state';
 import { PlaylistState } from './../spotify/states/playlist/playlist.state';
 import { NgModule } from '@angular/core';
@@ -31,7 +32,8 @@ import { PlayerSongComponent } from './components/player/components/player-song/
   ],
   providers: [
     PlaylistState,
-    UserState
+    UserState,
+    NavigatorState
   ]
 })
 export class LayoutModule { }

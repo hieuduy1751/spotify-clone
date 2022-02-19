@@ -1,7 +1,8 @@
 @use '../../../../../assets/scss/colorVariables' as color;
 
 .banner {
-  height: 270px;
+  padding-top: 90px !important;
+  height: 360px;
   .banner-img {
     background-color: #282828;
     box-shadow: 0 0 2rem rgb(22, 22, 22);
