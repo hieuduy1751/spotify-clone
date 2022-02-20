@@ -1,10 +1,48 @@
-<div #header class="w-100 p-0 m-0 px-4 header d-flex align-items-center">
+<div #header class="w-100 p-0 m-0 px-4 header d-flex align-items-center justify-content-between">
   <div class="navigator d-flex align-items-center">
-    <div [class]="'prev centered button mr-3 pr-1 pointer ' + (this.navigator.backStatus ? 'button-active' : 'button-disable')" (click)="this.navigator.backStatus ? back() : null">
+    <div
+      [class]="'prev centered button mr-3 pr-1 pointer ' + (this.navigator.backStatus ? 'button-active' : 'button-disable')"
+      (click)="this.navigator.backStatus ? back() : null">
       <i class="fas fa-chevron-left fa-lg"></i>
     </div>
-    <div [class]="'next centered button pl-1 pointer ' + (this.navigator.forwardStatus ? 'button-active' : 'button-disable')" (click)="this.navigator.forwardStatus ? forward() : null">
+    <div
+      [class]="'next centered button pl-1 pointer ' + (this.navigator.forwardStatus ? 'button-active' : 'button-disable')"
+      (click)="this.navigator.forwardStatus ? forward() : null">
       <i class="fas fa-chevron-right fa-lg"></i>
+    </div>
+  </div>
+  <div class="account d-flex" #account>
+    <div class="upgrade-button mr-5">UPGRADE</div>
+    <div class="user-profile d-flex align-items-center position-relative"
+      (click)="this.profileControlStatus = !this.profileControlStatus">
+      <ng-container *ngIf="me.images">
+        <img [src]="me.images[0].url" width="30" height="30">
+      </ng-container>
+      <p>{{ me.displayName }}</p>
+      <ng-container *ngIf="!profileControlStatus; else open">
+        <i class="fas fa-caret-down"></i>
+      </ng-container>
+      <ng-template #open>
+        <i class="fas fa-caret-up"></i>
+      </ng-template>
+      <ng-container *ngIf="this.profileControlStatus">
+        <div class="position-absolute user-function p-1">
+          <div class="list-group">
+            <a type="button" class="list-group-item list-group-item-action">
+              <div class="d-flex justify-content-between">
+                <p>Account</p>
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </a>
+            <a type="button" class="list-group-item list-group-item-action" [routerLink]="'/user/' + this.me.id">
+              <p>Profile</p>
+            </a>
+            <a type="button" class="list-group-item list-group-item-action">
+              <p>Logout</p>
+            </a>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>
