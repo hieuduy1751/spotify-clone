@@ -20,6 +20,8 @@ export class LayoutComponent implements OnInit {
   constructor(private userState: UserState, private playlistState: PlaylistState) {
     this.userState.me$.subscribe((me) => {
       this.me = me;
+      console.log(me);
+
     });
   }
 
