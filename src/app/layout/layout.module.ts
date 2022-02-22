@@ -1,3 +1,4 @@
+import { TrackState } from './../spotify/states/track/track.state';
 import { NavigatorState } from './../spotify/states/navigator/navigator.state';
 import { UserState } from './../spotify/states/user/user.state';
 import { PlaylistState } from './../spotify/states/playlist/playlist.state';
@@ -33,7 +34,8 @@ import { PlayerSongComponent } from './components/player/components/player-song/
   providers: [
     PlaylistState,
     UserState,
-    NavigatorState
+    NavigatorState,
+    TrackState
   ]
 })
 export class LayoutModule { }
