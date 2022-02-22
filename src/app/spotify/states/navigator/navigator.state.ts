@@ -23,13 +23,11 @@ export class NavigatorState {
           this.current$.next(this.history.length - 1);
         }
       }
-      console.log(this.history);
     });
 
     this.current$.subscribe(res => {
       this.backStatus = res > 0;
       this.forwardStatus = res < this.history$.getValue().length - 1;
-      console.log(this.current$.getValue());
     })
   }
 
