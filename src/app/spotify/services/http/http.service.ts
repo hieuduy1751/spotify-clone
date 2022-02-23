@@ -1,3 +1,4 @@
+import { AuthService } from './../auth/auth.service';
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse, HttpHeaderResponse, HttpHeaders, HttpParams, HttpResponse } from "@angular/common/http"
 import { environment } from "src/environments/environment";
@@ -9,15 +10,13 @@ import { catchError, Observable, throwError } from "rxjs";
 })
 
 export class HttpService {
-  private accessToken!: string;
+  private accessToken!: string | null;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private auth: AuthService) {
   }
 
-  public setToken(token: string) {
-    this.accessToken = token;
-    console.log(this.accessToken);
-
+  public setToken() {
+    this.accessToken = this.auth.getCookie('access_token');
   }
 
   public setHeaders(headers?: any): HttpHeaders {

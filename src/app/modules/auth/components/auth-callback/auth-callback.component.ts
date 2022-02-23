@@ -1,3 +1,4 @@
+import { AuthService } from './../../../../spotify/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { HttpService } from './../../../../spotify/services/http/http.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,11 +15,11 @@ export class AuthCallbackComponent implements OnInit {
   error = false;
   state!: string | null;
   accessToken!: string | null;
-  constructor(private route: ActivatedRoute, private http: HttpService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private auth: AuthService, private http: HttpService) { }
 
   ngOnInit(): void {
     this.route.fragment.subscribe(fragment => {
-      let res = this.parseFragment(fragment!);
+      let res = this.auth.fragmentParser(fragment!);
       this.error = res.error;
       this.state = res.state;
       this.accessToken = res.access_token;
@@ -29,33 +30,13 @@ export class AuthCallbackComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  checkState(state: string | null): boolean {
-    if (state != localStorage.getItem('stateKey')) {
-      localStorage.removeItem('stateKey');
-      return false;
-    } else {
-      localStorage.removeItem('stateKey');
-      return true;
-    }
-  }
-
-  parseFragment(fragment: string): any {
-    let res = fragment!.split('&');
-    let obj = {};
-    res.forEach(item => {
-      let key = item.split('=')[0];
-      let value = item.split('=')[1];
-      (obj as any)[key] = value;
-    });
-    return obj;
-  }
-
   saveToken(): void {
-    if (this.error || !this.checkState(this.state)) {
+    if (this.error != undefined || !this.auth.checkState(this.state)) {
       this.error = true;
     } else {
-      this.http.setToken(this.accessToken!);
-      this.router.navigate(['/']);      
+      this.auth.setCookie('access_token', this.accessToken!, 3600);
+      this.http.setToken();
+      this.router.navigate(['/']);
     }
   }
 }
