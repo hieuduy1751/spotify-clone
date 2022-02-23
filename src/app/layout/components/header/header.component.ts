@@ -1,5 +1,4 @@
-import { NavigatorState } from './../../../spotify/states/navigator/navigator.state';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,18 +6,10 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('header') header!: ElementRef;
-  constructor(public navigator: NavigatorState) {
-  }
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  back() {
-    this.navigator.back();
-  }
-
-  forward() {
-    this.navigator.forward();
-  }
 }

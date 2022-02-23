@@ -1,12 +1,6 @@
-@use "../../../../assets/scss/colorVariables" as color;
+@use '../../../../assets/scss/colorVariables' as color;
 
 div.header {
-  background-color: transparent;
+  background-color: color.$header-color;
   height: 60px !important;
-  .button {
-    width: 35px;
-    height: 35px;
-    border-radius: 100%;
-    background: #000;
-  }
 }
