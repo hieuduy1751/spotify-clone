@@ -1,6 +1,5 @@
-import { User } from './../../../spotify/models/user/user';
 import { NavigatorState } from './../../../spotify/states/navigator/navigator.state';
-import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +8,6 @@ import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('header') header!: ElementRef;
-  @ViewChild('account') accountERef!: ElementRef;
-  @Input() me!: User;
-  profileControlStatus = false;
-
   constructor(public navigator: NavigatorState) {
   }
 
@@ -25,12 +20,5 @@ export class HeaderComponent implements OnInit {
 
   forward() {
     this.navigator.forward();
-  }
-
-  @HostListener('document:click', ['$event'])
-  clickOut(event: any) {
-    if (!this.accountERef.nativeElement.contains(event.target)) {
-      this.profileControlStatus = false;
-    }
   }
 }
