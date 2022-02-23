@@ -4,6 +4,10 @@ import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
+    path: 'auth',
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: '',
     loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
   }
