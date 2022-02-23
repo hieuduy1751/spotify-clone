@@ -9,37 +9,29 @@ import { catchError, Observable, throwError } from "rxjs";
 })
 
 export class HttpService {
-  private accessToken!: string;
-
   constructor(private http: HttpClient) {
   }
 
-  public setToken(token: string) {
-    this.accessToken = token;
-    console.log(this.accessToken);
-
-  }
-
   public setHeaders(headers?: any): HttpHeaders {
-    const token = 'Bearer ' + this.accessToken;
+    const token = 'Bearer ' + environment.token;
     let httpHeaders = new HttpHeaders();
-    if (token) {
+    if(token) {
       try {
         httpHeaders = new HttpHeaders({
           'Content-Type': 'application/json',
           'Accept': 'application/json',
           Authorization: token
         })
-      } catch (error) {
+      } catch(error) {
         console.log(error);
-
+        
       }
     }
     return httpHeaders;
   }
 
   private errorHandler(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
+    if(error.error instanceof ErrorEvent) {
       console.error('An error occurred', error.error.message);
     } else {
       return throwError(error);
