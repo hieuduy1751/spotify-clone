@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlayerControlComponent } from './player-control.component';
+import { AuthCallbackComponent } from './auth-callback.component';
 
-describe('PlayerControlComponent', () => {
-  let component: PlayerControlComponent;
-  let fixture: ComponentFixture<PlayerControlComponent>;
+describe('AuthCallbackComponent', () => {
+  let component: AuthCallbackComponent;
+  let fixture: ComponentFixture<AuthCallbackComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlayerControlComponent ]
+      declarations: [ AuthCallbackComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlayerControlComponent);
+    fixture = TestBed.createComponent(AuthCallbackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,70 @@
-@use '../../../../assets/scss/colorVariables' as color;
+@use "../../../../assets/scss/colorVariables" as color;
 
 div.header {
-  background-color: color.$header-color;
+  background-color: transparent;
   height: 60px !important;
+  .navigator .button {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background: #000;
+  }
+
+  .account {
+    .upgrade-button {
+      cursor: pointer;
+      background-color: #061117;
+      padding: 8px 30px 7px 30px;
+      border-radius: 50px;
+      border: 1px solid color.$gray-color;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .user-profile {
+      cursor: pointer;
+      background-color: #061117;
+      border-radius: 50px;
+      padding: 3px;
+      padding-right: 10px;
+      img {
+        border-radius: 100%;
+      }
+
+      p {
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin: 0 5px !important;
+      }
+
+      .user-function {
+        width: 200px;
+        right: 0;
+        top: 50px;
+        background-color: #282828;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+        .list-group {
+          .list-group-item {
+            padding: 10px;
+            color: #eae9ea;
+            background-color: #282828;
+            border: none;
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            p {
+              color: #eaeaea;
+              padding: 0;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
 }

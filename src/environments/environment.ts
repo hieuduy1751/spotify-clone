@@ -5,15 +5,21 @@
 export const environment = {
 
   production: false,
-  token: 'BQDkCvCAd3g5XPab-wM2I6FH-VA8oaHDvXVAUYNXmTlmhl4OT99G3pba-SKqbRlmvpezgtLb-q17S2EOuyZwLBKQh_lA3h2HZXv4t9W7bH75ZifdW6eWPkWvAPMSkPzOzOs8JcP6qoS0NTUd38Xz9QxxRThxGg9FXUtiMYo1UVbPJEYk20448sYnm2OvjRTumDnvBrFxxqerN61bCKIKeneoZpOTi6WIeawSXneGi-xPJirmBio_',
+  token: '',
   apiPath: {
     home: 'https://api.spotify.com/v1',
     search: { search: '/search?' },
-
+    auth: 'https://accounts.spotify.com/en/authorize',
   },
   sightengine: {
     api_user: '1805283954',
     api_secret: 'enBHTtBFJ2vzHSC2p3MG'
+  }
+  ,
+  spotify: {
+    client_id: '9312f1aa69f34c8eb235b641a0a5e8ed',
+    redirect_uri: 'http://localhost:4200/auth/callback',
+    scope: 'user-read-recently-played user-top-read user-read-playback-position user-read-playback-state user-modify-playback-state user-read-currently-playing streaming playlist-modify-public playlist-modify-private playlist-read-private playlist-read-collaborative user-library-modify user-library-read user-read-email user-read-private'
   }
 };
 

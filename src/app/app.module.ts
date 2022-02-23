@@ -1,3 +1,4 @@
+import { UserState } from 'src/app/spotify/states/user/user.state';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,14 +8,16 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserState
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
