@@ -1,6 +1,4 @@
-import { TrackState } from './../../../spotify/states/track/track.state';
 import { Component, OnInit } from '@angular/core';
-import { Track } from 'src/app/spotify/models/track/track';
 
 @Component({
   selector: 'app-player',
@@ -9,16 +7,9 @@ import { Track } from 'src/app/spotify/models/track/track';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor(private trackState: TrackState) { }
-
-  track!: Track;
+  constructor() { }
 
   ngOnInit(): void {
-    this.trackState.loadTrack('0lTjrAKc4VY6p2et9mJcYn');
-    this.trackState.track$.subscribe(track => {
-      this.track = track;
-      console.log(this.track);
-    })
   }
 
 }
