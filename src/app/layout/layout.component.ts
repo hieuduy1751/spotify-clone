@@ -17,7 +17,10 @@ export class LayoutComponent implements OnInit {
   asideMenu: AsideMenu[] = AsideMenuConfig.items;
   buttons: AsideMenu[] = AsideMenuConfig.buttons;
   me: User = new User();
-  constructor(private userState: UserState, private playlistState: PlaylistState) {
+  constructor(
+    private userState: UserState, 
+    private playlistState: PlaylistState,
+    ) {
     this.userState.me$.subscribe((me) => {
       this.me = me;
       console.log(this.me);

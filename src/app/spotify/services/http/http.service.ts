@@ -20,6 +20,7 @@ export class HttpService {
   }
 
   public setHeaders(headers?: any): HttpHeaders {
+    this.setToken();
     const token = 'Bearer ' + this.accessToken;
     let httpHeaders = new HttpHeaders();
     if (token) {
@@ -100,4 +101,21 @@ export class HttpService {
       );
   }
 
+  public getWithPromise(path: string): Promise<any> {
+    return this.http.get(
+      path,
+      {
+        headers: this.setHeaders(),
+        withCredentials: false,
+        observe: 'response'
+      })
+      .toPromise()
+      .then(response => {
+        return response;
+      })
+      .catch(error => {
+        console.log('Not logged in');
+        return false;
+      });
+  }
 }

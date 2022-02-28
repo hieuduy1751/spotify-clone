@@ -15,7 +15,7 @@
     <div class="upgrade-button mr-5">UPGRADE</div>
     <div class="user-profile d-flex align-items-center position-relative"
       (click)="this.profileControlStatus = !this.profileControlStatus">
-      <ng-container *ngIf="me.images">
+      <ng-container *ngIf="me && me.images && me.images[0]">
         <img [src]="me.images[0].url" width="30" height="30">
       </ng-container>
       <p>{{ me.displayName }}</p>

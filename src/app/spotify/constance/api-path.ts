@@ -13,5 +13,8 @@ export const API_PATH = {
   USER: {
     GET_ME: '/me',
     GET_USER: '/users/',
+  },
+  FOLLOW: {
+    GET_FOLLOWED: '/me/following',
   }
 }

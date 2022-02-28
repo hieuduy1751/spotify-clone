@@ -1,6 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { environment } from 'src/environments/environment';
+import { HttpService } from '../http/http.service';
 
 @Injectable({
   providedIn: "root"
@@ -8,7 +9,8 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   state!: string;
 
-  constructor() {
+  constructor(
+  ) {
     if (!this.checkStateExist()) {
       this.state = this.generateRandomString(16);
       this.setState(this.state);

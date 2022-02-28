@@ -1,22 +1,33 @@
-import { AuthService } from './auth.service';
-import { User } from './../../models/user/user';
-import { UserService } from './../user/user.service';
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { catchError, Observable, throwError } from "rxjs";
+import { Observable } from "rxjs";
+import { API_PATH } from "../../constance/api-path";
+import { HttpService } from '../http/http.service';
 
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthGuard implements CanActivate {
-  constructor(private userService: UserService, private auth: AuthService) { }
+
+  constructor(
+    private http: HttpService,
+    private router: Router
+  ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    // if(this.userService.validMe()) {
-    //   this.auth.clearAuth();
-    // }
-    // return this.userService.validMe();
-    return true;
+    return this.http.getWithPromise(`${API_PATH.BASE_URL}${API_PATH.USER.GET_ME}`)
+      .then((res) => {
+        if(res.status === 200) {
+          return true;
+        } else {
+          this.router.navigate(['/auth']);
+          return false;
+        }
+      })
+      .catch((err) => {
+        this.router.navigate(['/auth']);
+        return false;
+      });
   }
 }

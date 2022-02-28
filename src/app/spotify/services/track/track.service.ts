@@ -1,5 +1,3 @@
-import { TrackArtist } from './../../models/track/track-artist';
-import { TrackAlbum } from './../../models/track/track-album';
 import { Track } from './../../models/track/track';
 import { HttpService } from './../http/http.service';
 import { Injectable } from "@angular/core";
